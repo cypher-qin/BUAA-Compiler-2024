@@ -136,15 +136,16 @@ public class Lexer {
                     }
                     lineno++;
                 } else if (text.charAt(ptr)=='*'){
-                    c=text.charAt(ptr);
                     ptr++;
-                    while (c!='/'){
+                    while (!(text.charAt(ptr)=='*'&&text.charAt(ptr+1)=='/')){
                         c=text.charAt(ptr);
                         ptr++;
                         if (c=='\n'){
                             lineno++;
                         }
                     }
+                    ptr=ptr+2;
+                    continue;
                 }else {
                     token.append(c);
                     type=Type.DIV;
@@ -160,34 +161,6 @@ public class Lexer {
                 token.append(c);
                 type=Type.MINU;
                 return new Token(lineno, type, token.toString());
-                /*int tmpptr=ptr-2;
-                while (text.charAt(tmpptr)==' '){
-                    tmpptr--;
-                }
-                char tmp=text.charAt(tmpptr);
-                char tmp2=text.charAt(ptr);
-                if (isDigit(tmp) || isLetter(tmp) || tmp2=='-'|| tmp2=='+'){
-
-                }else {
-                    token.append(c);
-                    c=text.charAt(ptr);
-                    ptr++;
-                    while (isDigit(c)){
-                        token.append(c);
-                        c=text.charAt(ptr);
-                        ptr++;
-                        if (ptr==text.length()){
-                            if (isDigit(c)){
-                                token.append(c);
-                            }
-                            isEnd=true;
-                            break;
-                        }
-                    }
-                    ptr--;
-                    type=Type.IntConst;
-                    return new Token(lineno, type, token.toString());
-                }*/
             }
             if (c=='+'){
                 token.append(c);

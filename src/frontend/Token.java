@@ -19,4 +19,14 @@ public class Token {
     public String getValue(){
         return value;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb=new StringBuilder();
+        sb.append(this.type.getCategoryCode());
+        sb.append(' ');
+        sb.append(this.value);
+        sb.append('\n');
+        return sb.toString();
+    }
 }
