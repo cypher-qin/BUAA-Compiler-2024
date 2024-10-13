@@ -23,6 +23,9 @@ public class CompUnit implements CommonTreeNode{
     public void addFuncDef(FuncDef f){
         funcDef.add(f);
     }
+    public ArrayList<Decl> getDeclList(){return decl;}
+    public ArrayList<FuncDef> getFuncList(){return funcDef;}
+    public MainFuncDef getMainFuncDef(){return mainFuncDef;}
     public void walk(){
         if (!decl.isEmpty()){
             for (Decl d : decl){

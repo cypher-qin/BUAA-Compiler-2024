@@ -26,4 +26,17 @@ public class BlockItem implements CommonTreeNode{
             stmt.walk();
         }
     }
+    public int getType(){
+        if (type==BlockItemType.STMT){
+            return 0;
+        }else {
+            return 1;
+        }
+    }
+    public Decl getDecl(){
+        return decl;
+    }
+    public Stmt getStmt(){
+        return stmt;
+    }
 }

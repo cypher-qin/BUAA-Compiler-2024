@@ -1,6 +1,7 @@
 package frontend.TreeNode;
 
 import frontend.Token;
+import frontend.Type;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -49,6 +50,23 @@ public class FuncFParam implements CommonTreeNode{
             Files.write(path, "<FuncFParam>\n".getBytes(StandardCharsets.UTF_8),StandardOpenOption.APPEND);
         } catch (IOException e) {
 
+        }
+    }
+    public String getBtype(){
+        if (btype.getType()== Type.INT){
+            return "INT";
+        }else {
+            return "CHAR";
+        }
+    }
+    public String getName(){
+        return ident.getValue();
+    }
+    public String getDim(){
+        if (type==FuncFParamType.Dim0){
+            return "VAR";
+        }else {
+            return "ARRAY";
         }
     }
 }

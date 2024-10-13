@@ -91,4 +91,14 @@ public class VarDef implements CommonTreeNode{
 
         }
     }
+    public String getName(){
+        return ident.getValue();
+    }
+    public int getDim(){
+        if (type==VarDefType.initialized_dim0 || type==VarDefType.notinitialized_dim0){
+            return 0;
+        }else {
+            return 1;
+        }
+    }
 }

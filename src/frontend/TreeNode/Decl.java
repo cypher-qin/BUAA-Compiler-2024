@@ -1,6 +1,8 @@
 package frontend.TreeNode;
 
 
+import frontend.SymTableNode;
+
 public class Decl implements CommonTreeNode{
     public enum DeclType{
         Const_TYPE,
@@ -23,5 +25,18 @@ public class Decl implements CommonTreeNode{
         }else {
             varDecl.walk();
         }
+    }
+    public int getIsconst(){
+        if (type==DeclType.Const_TYPE){
+            return 1;
+        }else {
+            return 0;
+        }
+    }
+    public ConstDecl getConstDecl(){
+        return constDecl;
+    }
+    public VarDecl getVarDecl(){
+        return varDecl;
     }
 }

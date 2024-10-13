@@ -45,4 +45,7 @@ public class Block implements CommonTreeNode{
             throw new RuntimeException(e);
         }
     }
+    public ArrayList<BlockItem> getBis(){
+        return bis;
+    }
 }

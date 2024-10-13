@@ -56,4 +56,14 @@ public class ConstDef implements CommonTreeNode{
 
         }
     }
+    public int getDim(){
+        if (type==ConstDefType.Dim0){
+            return 0;
+        }else {
+            return 1;
+        }
+    }
+    public String getName(){
+        return ident.getValue();
+    }
 }

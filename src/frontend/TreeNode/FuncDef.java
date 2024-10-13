@@ -1,6 +1,7 @@
 package frontend.TreeNode;
 
 import frontend.Token;
+import frontend.Type;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -42,5 +43,23 @@ public class FuncDef implements CommonTreeNode{
         } catch (IOException e) {
 
         }
+    }
+    public String getType(){
+        if (type.getType().getType()== Type.INT){
+            return "INT";
+        } else if (type.getType().getType()== Type.CHAR) {
+            return "CHAR";
+        }else {
+            return "VOID";
+        }
+    }
+    public String getName(){
+        return ident.getValue();
+    }
+    public FuncFParams getFps(){
+        return fps;
+    }
+    public Block getBlk(){
+        return blk;
     }
 }

@@ -1,8 +1,5 @@
-import frontend.Lexer;
-import frontend.Parser;
-import frontend.Token;
+import frontend.*;
 import frontend.TreeNode.CompUnit;
-import frontend.Type;
 import Error.Error;
 
 import java.io.FileWriter;
@@ -17,17 +14,20 @@ import java.util.Comparator;
 public class Compiler {
     private static ArrayList<Token> tokenList;
     private static ArrayList<Error> errorList;
+    private static CompUnit compUnit;
     public static void main(String[] args){
         errorList=new ArrayList<>();
         tokenList=new ArrayList<>();
         try {
-            FileWriter writer0 = new FileWriter("parser.txt", false);
+            //FileWriter writer0 = new FileWriter("parser.txt", false);
             FileWriter writer1 = new FileWriter("error.txt", false);
+            FileWriter writer2 = new FileWriter("symbol.txt", false);
         } catch (IOException e) {
 
         }//清空文件
         task1();// 词法分析
-        task2();
+        task2();// 文法分析
+        task3();
         errorList.sort(Comparator.comparingInt((Error o) -> o.getLineno()));
         outputErrorInfo();//输出错误信息
     }
@@ -55,11 +55,17 @@ public class Compiler {
         if (tokenList.isEmpty()){
             return;
         }
-        CompUnit cu=parser.parseCompUnit();
+        compUnit=parser.parseCompUnit();
         ArrayList<Error> tmp_errors=parser.getErrors();
         errorList.addAll(tmp_errors);
+    }
+    public static void task3(){
+        Analyzer analyzer=new Analyzer(compUnit);
+        analyzer.analyzeCompUnit();
+        ArrayList<Error> tmp_errors=analyzer.getErrors();
+        errorList.addAll(tmp_errors);
         if (errorList.isEmpty()){
-            cu.walk();
+            analyzer.getManger().getTable().print();
         }
     }
     public static void outputErrorInfo(){

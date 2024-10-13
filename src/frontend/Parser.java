@@ -473,7 +473,7 @@ public class Parser {
                 ptr++;
                 if (tokens.get(ptr).getType()==Type.SEMICN){
                     return new Stmt(head,(Exp) null,tokens.get(ptr++));
-                }else if (isExpHead(tokens.get(ptr).getType()) && function_type==1){
+                }else if (isExpHead(tokens.get(ptr).getType())){
                     Exp exp=parseExp();
                     if (tokens.get(ptr).getType()==Type.SEMICN){
                         return new Stmt(head,exp,tokens.get(ptr++));

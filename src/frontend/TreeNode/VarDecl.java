@@ -44,4 +44,10 @@ public class VarDecl implements CommonTreeNode{
 
         }
     }
+    public ArrayList<VarDef> getVarDefs(){
+        return varDefs;
+    }
+    public Token getbType(){
+        return btype;
+    }
 }

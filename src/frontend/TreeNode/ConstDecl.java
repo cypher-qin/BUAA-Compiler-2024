@@ -18,7 +18,6 @@ public class ConstDecl implements CommonTreeNode{
     private Token symbol;
     public ConstDecl(Token t1,Token t2,ConstDef t3){
         constDefs=new ArrayList<>();
-        const_string=t1;
         btype=t2;
         constDefs.add(t3);
     }
@@ -28,6 +27,8 @@ public class ConstDecl implements CommonTreeNode{
     public void end(Token t4){
         symbol=t4;
     }
+    public Token getBtype(){return btype;}
+    public ArrayList<ConstDef> getConstDefs(){return constDefs;}
     public void walk(){
         Path path = Paths.get("parser.txt");
         try {

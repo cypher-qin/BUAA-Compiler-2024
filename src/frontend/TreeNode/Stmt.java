@@ -238,4 +238,26 @@ public class Stmt implements CommonTreeNode{
 
         }
     }
+    public StmtType getType(){
+        return type;
+    }
+    public Block getBlock(){
+        return block;
+    }
+    public Stmt getStmt1_if(){
+        return stmt1_if;
+    }
+    public Stmt getStmt2_if(){
+        return stmt2_if;
+    }
+    public int judge_if_type(){
+        if (else_if==null){
+            return 1;
+        }else {
+            return 0;
+        }
+    }
+    public Stmt getStmt_for(){
+        return stmt_for;
+    }
 }

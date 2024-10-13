@@ -33,7 +33,8 @@ public class FuncFParams implements CommonTreeNode{
         } catch (IOException e) {
 
         }
-
-
+    }
+    public ArrayList<FuncFParam> getList(){
+        return fps;
     }
 }

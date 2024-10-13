@@ -38,4 +38,7 @@ public class MainFuncDef implements CommonTreeNode{
 
         }
     }
+    public Block getBlk(){
+        return blk;
+    }
 }

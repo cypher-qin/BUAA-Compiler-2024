@@ -23,4 +23,7 @@ public class FuncType implements CommonTreeNode{
 
         }
     }
+    public Token getType(){
+        return type;
+    }
 }
