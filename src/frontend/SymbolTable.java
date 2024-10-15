@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class SymbolTable {
     private int parent_id;
     private ArrayList<SymbolTable> childs;
-    private ArrayList<SymTableNode> nodes;
+    public ArrayList<SymTableNode> nodes;
     private int table_id;
 
     public SymbolTable(int parent,int this_id){

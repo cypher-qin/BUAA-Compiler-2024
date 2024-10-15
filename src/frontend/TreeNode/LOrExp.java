@@ -14,10 +14,10 @@ public class LOrExp implements CommonTreeNode{
         SINGLE,
         DOUBLE;
     }
-    private LOrExpType type;
-    private LAndExp lAndExp;
+    public LOrExpType type;
+    public LAndExp lAndExp;
     private Token sym;
-    private LOrExp lOrExp;
+    public LOrExp lOrExp;
     public LOrExp(LAndExp lAndExp){
         type=LOrExpType.SINGLE;
         this.lAndExp=lAndExp;

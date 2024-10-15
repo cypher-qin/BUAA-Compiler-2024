@@ -10,9 +10,9 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 public class ForStmt implements CommonTreeNode{
-    private LVal lVal;
+    public LVal lVal;
     private Token eq;
-    private Exp exp;
+    public Exp exp;
     public ForStmt(LVal lVal,Token eq,Exp exp){
         this.lVal=lVal;
         this.eq=eq;

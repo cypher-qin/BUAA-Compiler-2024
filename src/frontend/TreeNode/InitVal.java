@@ -17,7 +17,7 @@ public class InitVal implements CommonTreeNode{
         Dim1,
         StringConst;
     }
-    private ArrayList<Exp> expList;
+    public ArrayList<Exp> expList;
     private InitValType type;
 
     private Token stringconst;

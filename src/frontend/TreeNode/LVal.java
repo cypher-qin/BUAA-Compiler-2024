@@ -14,11 +14,11 @@ public class LVal implements CommonTreeNode{
         Dim0,
         Dim1;
     }
-    private Token ident;
+    public Token ident;
     private Token left;
     private Token right;
-    private Exp exp;
-    private LValType type;
+    public Exp exp;
+    public LValType type;
     public LVal(Token ident,Token left,Exp exp,Token right){
         type=LValType.Dim1;
         this.ident=ident;

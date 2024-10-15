@@ -62,4 +62,5 @@ public class FuncDef implements CommonTreeNode{
     public Block getBlk(){
         return blk;
     }
+    public int get_ident_lineno(){return ident.getLineno();}
 }

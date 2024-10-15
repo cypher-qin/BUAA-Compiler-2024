@@ -1,17 +1,47 @@
 package frontend;
 
+import frontend.TreeNode.FuncFParam;
+
+import java.util.ArrayList;
+
 public class SymTableNode {
-    private final int tableid;
-    private final String name;
-    private final String type;//VAR ARRAY FUNC
-    private final String btype;//INT CHAR VOID
-    private final int isconst;
+    public final int tableid;
+    public final String name;
+    public final String type;//VAR ARRAY FUNC
+    public final String btype;//INT CHAR VOID
+    public final int isconst;
+    public int lineno;
+    public enum FPSTYPE{
+        INTDIM0,
+        INTDIM1,
+        CHARDIM0,
+        CHARDIM1;
+    }
+    public ArrayList<FPSTYPE> fpstypes=new ArrayList<>();
     public SymTableNode(int tableid,String name,String type,String btype,int isconst){
         this.tableid=tableid;
         this.name=name;
         this.type=type;
         this.btype=btype;
         this.isconst=isconst;
+    }
+    public void setLineno(int lineno){
+        this.lineno=lineno;
+    }
+    public void setFPSTYPE(FuncFParam fps){
+        if (fps.type== FuncFParam.FuncFParamType.Dim0){
+            if (fps.btype.getType()==Type.INT){
+                fpstypes.add(FPSTYPE.INTDIM0);
+            }else {
+                fpstypes.add(FPSTYPE.CHARDIM0);
+            }
+        }else {
+            if (fps.btype.getType()==Type.INT){
+                fpstypes.add(FPSTYPE.INTDIM1);
+            }else {
+                fpstypes.add(FPSTYPE.CHARDIM1);
+            }
+        }
     }
     @Override
     public String toString(){

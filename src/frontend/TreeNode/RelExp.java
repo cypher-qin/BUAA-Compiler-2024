@@ -14,10 +14,10 @@ public class RelExp implements CommonTreeNode{
         SINGLE,
         DOUBLE;
     }
-    private RelExpType type;
-    private RelExp relExp;
+    public RelExpType type;
+    public RelExp relExp;
     private Token sym;
-    private AddExp addExp;
+    public AddExp addExp;
     public RelExp(AddExp addExp){
         type=RelExpType.SINGLE;
         this.addExp=addExp;

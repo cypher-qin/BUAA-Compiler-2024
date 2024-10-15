@@ -14,10 +14,10 @@ public class LAndExp implements CommonTreeNode{
         SINGLE,
         DOUBLE;
     }
-    private LAndExp lAndExp;
+    public LAndExp lAndExp;
     private Token sym;
-    private EqExp eqExp;
-    private LAndExpType type;
+    public EqExp eqExp;
+    public LAndExpType type;
     public LAndExp(EqExp eqExp){
         type=LAndExpType.SINGLE;
         this.eqExp=eqExp;

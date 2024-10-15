@@ -16,13 +16,13 @@ public class PrimaryExp implements CommonTreeNode{
         Number_TYPE,
         Character_TYPE;
     }
-    private PrimaryExpType type;
+    public PrimaryExpType type;
     private Token left;
     private Token right;
-    private Exp exp;
-    private LVal lVal;
-    private Number number;
-    private Character character;
+    public Exp exp;
+    public LVal lVal;
+    public Number number;
+    public Character character;
     public PrimaryExp(Token left,Exp exp,Token right){
         type=PrimaryExpType.EXP_TYPE;
         this.left=left;

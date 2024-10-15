@@ -15,12 +15,12 @@ public class FuncFParam implements CommonTreeNode{
         Dim0,
         Dim1;
     }
-    private Token btype;
+    public Token btype;
     private Token ident;
     private Token l;
 
     private Token r;
-    private FuncFParamType type;
+    public FuncFParamType type;
 
     public FuncFParam(Token btype,Token ident){
         this.type=FuncFParamType.Dim0;
@@ -68,5 +68,8 @@ public class FuncFParam implements CommonTreeNode{
         }else {
             return "ARRAY";
         }
+    }
+    public int get_ident_lineno(){
+        return ident.getLineno();
     }
 }

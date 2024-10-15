@@ -22,7 +22,7 @@ public class VarDef implements CommonTreeNode{
 
     private ConstExp constExp;
     private Token eq;
-    private InitVal initVal;
+    public InitVal initVal;
     private VarDefType type;
     public VarDef(Token i){
         type=VarDefType.notinitialized_dim0;
@@ -101,4 +101,5 @@ public class VarDef implements CommonTreeNode{
             return 1;
         }
     }
+    public int get_ident_lineno(){return ident.getLineno();}
 }

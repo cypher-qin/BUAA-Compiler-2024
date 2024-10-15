@@ -12,7 +12,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
 public class FuncRParams implements CommonTreeNode{
-    private ArrayList<Exp> exps;
+    public ArrayList<Exp> exps;
     public FuncRParams(Exp exp){
         exps=new ArrayList<>();
         exps.add(exp);

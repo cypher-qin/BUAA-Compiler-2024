@@ -341,14 +341,18 @@ public class Parser {
             return new BlockItem(parseStmt());
         }
     }
+    public int judgeing=0;
     public boolean judgeLval(){
+        judgeing=1;
         int tmp_ptr=ptr;
         parseLVal();
         if (tokens.get(ptr).getType()==Type.ASSIGN){
             ptr=tmp_ptr;
+            judgeing=0;
             return true;
         }else {
             ptr=tmp_ptr;
+            judgeing=0;
             return false;
         }
     }
@@ -603,7 +607,9 @@ public class Parser {
             if (tokens.get(ptr).getType()==Type.RBRACK){
                 return new LVal(ident,left,exp,tokens.get(ptr++));
             }else {
-                errors.add(new Error('k',tokens.get(ptr-1).getLineno()));
+                if (judgeing == 0) {
+                    errors.add(new Error('k',tokens.get(ptr-1).getLineno()));
+                }
                 return new LVal(ident,left,exp,null);
             }
         }else {

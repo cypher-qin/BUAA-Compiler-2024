@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Block implements CommonTreeNode{
     private Token left;
-    private Token right;
+    public Token right;
     private ArrayList<BlockItem> bis;
     public Block(Token left){
         bis=new ArrayList<>();

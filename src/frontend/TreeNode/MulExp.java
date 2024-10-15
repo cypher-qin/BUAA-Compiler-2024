@@ -14,9 +14,9 @@ public class MulExp implements CommonTreeNode{
         SINGLE,
         DOUBLE;
     }
-    private MulExpType type;
-    private UnaryExp unaryExp;
-    private MulExp mulExp;
+    public MulExpType type;
+    public UnaryExp unaryExp;
+    public MulExp mulExp;
     private Token sym;
     public MulExp(UnaryExp unaryExp){
         type=MulExpType.SINGLE;

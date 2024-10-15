@@ -15,14 +15,14 @@ public class UnaryExp implements CommonTreeNode{
         Function_TYPE,
         UnaryEXp_TYPE;
     }
-    private UnaryExpType type;
-    private PrimaryExp primaryExp;
-    private Token ident;
+    public UnaryExpType type;
+    public PrimaryExp primaryExp;
+    public Token ident;
     private Token left;
     private Token right;
-    private FuncRParams funcRParams;
+    public FuncRParams funcRParams;
     private UnaryOp unaryOp;
-    private UnaryExp unaryExp;
+    public UnaryExp unaryExp;
     public UnaryExp(PrimaryExp primaryExp){
         type=UnaryExpType.PrimaryExp_TYPE;
         this.primaryExp=primaryExp;

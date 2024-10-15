@@ -25,9 +25,9 @@ public class Stmt implements CommonTreeNode{
     }
     private StmtType type;
     //ASSIGN
-    private LVal lVal_assign;
+    public LVal lVal_assign;
     private Token eq_assign;
-    private Exp exp_assign;
+    public Exp exp_assign;
     private Token semic_assign;
     public Stmt(LVal lVal,Token eq,Exp exp,Token semic){
         type=StmtType.ASSIGN;
@@ -37,7 +37,7 @@ public class Stmt implements CommonTreeNode{
         semic_assign=semic;
     }
     //EXP
-    private Exp exp_exp;
+    public Exp exp_exp;
     private Token semic_exp;
     public Stmt(Token semic,Exp exp){
         type=StmtType.EXP;
@@ -54,7 +54,7 @@ public class Stmt implements CommonTreeNode{
     private Token if_if;
     private Token left_if;
     private Token right_if;
-    private Cond cond_if;
+    public Cond cond_if;
     private Stmt stmt1_if;
     private Token else_if;
     private Stmt stmt2_if;
@@ -76,9 +76,9 @@ public class Stmt implements CommonTreeNode{
     private Token right_for;
     private Token semic1_for;
     private Token semic2_for;
-    private ForStmt forStmt1;
-    private Cond cond_for;
-    private ForStmt forStmt2;
+    public ForStmt forStmt1;
+    public Cond cond_for;
+    public ForStmt forStmt2;
     private Stmt stmt_for;
     public Stmt(Token t1,Token left_for,ForStmt forStmt1,Token semic1_for,Cond cond_for,Token semic2_for,ForStmt forStmt2,Token right_for,Stmt stmt_for){
         type=StmtType.FOR;
@@ -93,7 +93,7 @@ public class Stmt implements CommonTreeNode{
         this.stmt_for=stmt_for;
     }
     //BREAK or Continue
-    private Token bc_bc;
+    public Token bc_bc;
     private Token semic_bc;
     public Stmt(Token token_bc,Token semic_bc){
         type=StmtType.BREAK_CONTINUE;
@@ -101,8 +101,8 @@ public class Stmt implements CommonTreeNode{
         this.semic_bc=semic_bc;
     }
     // return
-    private Token re;
-    private Exp exp_re;
+    public Token re;
+    public Exp exp_re;
     private Token semic_re;
 
     public Stmt(Token re,Exp exp_re,Token semic_re){
@@ -112,7 +112,7 @@ public class Stmt implements CommonTreeNode{
         this.semic_re=semic_re;
     }
     //GET_INT GET_CHAR
-    private LVal lVal_ic;
+    public LVal lVal_ic;
     private Token t1_ic;
     private Token get_ic;
     private Token left_ic;
@@ -128,10 +128,10 @@ public class Stmt implements CommonTreeNode{
         this.semic_ic=semic_ic;
     }
     //Print
-    private Token print;
+    public Token print;
     private Token left_p;
-    private Token string_p;
-    private ArrayList<Exp> expList_p;
+    public Token string_p;
+    public ArrayList<Exp> expList_p;
     private Token right_p;
     private Token semic_p;
     public Stmt(Token print,Token left_p,Token string_p){

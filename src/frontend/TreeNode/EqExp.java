@@ -14,10 +14,10 @@ public class EqExp {
         SINGLE,
         DOUBLE;
     }
-    private EqExpType type;
-    private RelExp relExp;
+    public EqExpType type;
+    public RelExp relExp;
     private Token sym;
-    private EqExp eqExp;
+    public EqExp eqExp;
     public EqExp(RelExp relExp){
         type= EqExpType.SINGLE;
         this.relExp=relExp;

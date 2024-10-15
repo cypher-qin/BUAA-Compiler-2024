@@ -66,4 +66,5 @@ public class ConstDef implements CommonTreeNode{
     public String getName(){
         return ident.getValue();
     }
+    public int get_ident_lineno(){return ident.getLineno();}
 }

@@ -15,7 +15,7 @@ public class MainFuncDef implements CommonTreeNode{
     private Token left;
     private Token right;
 
-    private Block blk;
+    public Block blk;
     public MainFuncDef(Token int_token,Token main_token,Token left,Token right,Block blk){
         this.int_token=int_token;
         this.main_token=main_token;

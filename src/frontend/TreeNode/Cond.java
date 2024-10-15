@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 public class Cond implements CommonTreeNode{
-    private LOrExp lOrExp;
+    public LOrExp lOrExp;
     public Cond(LOrExp lOrExp){
         this.lOrExp=lOrExp;
     }

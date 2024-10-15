@@ -28,4 +28,37 @@ public class STManger {
     }
     public int getTable_num(){return table_num;}
     public SymbolTable getTable(){return symbolTables.get(1);}
+
+    public boolean checksame(String name){
+        for(SymTableNode symTableNode : table_now.nodes){
+            if (symTableNode.name.equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean find(String name){
+        int id=table_now.getTable_id();
+        while (id!=0){
+            for (SymTableNode stn:symbolTables.get(id).nodes){
+                if (stn.name.equals(name)){
+                    return true;
+                }
+            }
+            id=symbolTables.get(id).getParent_id();
+        }
+        return false;
+    }
+    public SymTableNode getSTN(String name){
+        int id=table_now.getTable_id();
+        while (id!=0){
+            for (SymTableNode stn:symbolTables.get(id).nodes){
+                if (stn.name.equals(name)){
+                    return stn;
+                }
+            }
+            id=symbolTables.get(id).getParent_id();
+        }
+        return null;
+    }
 }

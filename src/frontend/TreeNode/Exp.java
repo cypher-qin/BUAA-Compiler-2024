@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 public class Exp implements CommonTreeNode{
-    private AddExp addExp;
+    public AddExp addExp;
     public Exp(AddExp addExp){
         this.addExp=addExp;
     }

@@ -14,8 +14,8 @@ public class AddExp implements CommonTreeNode{
         SINGLE,
         DOUBLE;
     }
-    private AddExpType type;
-    private MulExp mulExp;
+    public AddExpType type;
+    public MulExp mulExp;
     public Token sym;
     public AddExp addExp;
     public AddExp(MulExp mulExp){
